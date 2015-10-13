@@ -81,3 +81,18 @@ a
   align-self: stretch;
   text-align: center;
 }
+
+/*Classes for project container*/
+.projects-container
+{
+  order: 1;
+  padding-top: 5%;
+  align-items: center;
+  width: 80%;
+  /*background-color: black;*/
+}
+
+.projects-container img
+{
+  margin: 5%;
+}
