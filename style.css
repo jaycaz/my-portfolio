@@ -15,33 +15,61 @@ a
   font-family: 'Exo', sans-serif;
 }
 
-.vcenter
+.flex-container
 {
-  min-height: 100%;
-  min-height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: auto;
+  min-height: 100vh;
   flex-direction: column;
-  /*display: -webkit-flex; /* For Safari */*/
-  /*-webkit-justify-content: center; /* For Safari */*/
-  /*-webkit-align-items: center; /* For Safari */*/
+  align-items: center;
+  justify-content: space-around;
+  display: -webkit-flex; /* For Safari */
+  -webkit align-items: flex;
 }
 
-/*The banner image where my name is displayed*/
+.navbar-default
+{
+  order: 0;
+}
+
+.navbar a
+{
+  font-size: 14pt;
+}
+
+.vcenter
+{
+  order: 1;
+  margin: auto;
+}
+
+.hcenter
+{
+  align-self: center;
+  text-align: center;
+}
+
+/*The banner image for the home screen*/
 #name-banner
 {
   background-image: url("assets/assets_banner.png");
-  display: table-cell;
-  background-size: 100%;
-  min-width: 100%;
-  padding-bottom: 12%;
+  padding-bottom: 13%;
   background-repeat: no-repeat;
-  display:block;
+  background-size: contain;
 }
 
 #name-text
 {
   padding-top: 1%;
   font-weight: 700;
+}
+
+/*Row used for top header text on page*/
+.row-header
+{
+  order: 1;
+  background-color: #a83220;
+  margin-top: 4%;
+  align-self: stretch;
+  text-align: center;
 }
