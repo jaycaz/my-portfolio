@@ -8,7 +8,6 @@ h1
   color: #fffffc;
   font-size: 72pt;
   font-family: 'Exo', sans-serif;
-  /*text-align: center;*/
 }
 
 .vcenter
@@ -19,7 +18,40 @@ h1
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  display: -webkit-flex; /* For Safari */
-  -webkit-justify-content: center; /* For Safari */
-  -webkit-align-items: center; /* For Safari */
+  /*display: -webkit-flex; /* For Safari */*/
+  /*-webkit-justify-content: center; /* For Safari */*/
+  /*-webkit-align-items: center; /* For Safari */*/
+}
+
+.navbar-default
+{
+  background-color: #dddddd !important;
+}
+
+.navbar-default .active
+{
+  color: #d46611 !important;
+}
+
+.navbar-default a
+{
+  color: #a83220 !important;
+}
+
+/*The banner image where my name is displayed*/
+#name-banner
+{
+  background-image: url("assets/assets_banner.png");
+  display: table-cell;
+  background-size: 100%;
+  min-width: 100%;
+  padding-bottom: 12%;
+  background-repeat: no-repeat;
+  display:block;
+}
+
+#name-text
+{
+  padding-top: 1%;
+  font-weight: 700;
 }
