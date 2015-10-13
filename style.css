@@ -10,6 +10,13 @@ h1
   font-family: 'Exo', sans-serif;
 }
 
+h2
+{
+  color: #fffffc;
+  font-size: 64pt;
+  font-family: 'Exo', sans-serif;
+}
+
 a
 {
   font-family: 'Exo', sans-serif;
@@ -70,6 +77,13 @@ a
 {
   width: 100%;
   height: 100%;
+}
+
+.row
+{
+  order: 1;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 /*Row used for top header text on page*/
