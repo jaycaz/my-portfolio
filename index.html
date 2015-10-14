@@ -11,16 +11,147 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar.css">
     <!-- Custom Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Exo:400,500,300' rel='stylesheet' type='text/css'>
   </head>
   <body>
 
-    <div class="container-fluid flex-container">
-      <div class="row text-center vcenter">
-          <h1>Hi there!</h1>
+      <!-- Navbar -->
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <ul class="nav navbar-nav pull-right">
+          <li class="nav-btn" id="nav-home"><a href="#">Home</a></li>
+          <li class="nav-btn" id="nav-coding"><a href="#">Coding</a></li>
+          <li class="nav-btn" id="nav-design"><a href="#">Design</a></li>
+          <li class="nav-btn" id="nav-projects"><a href="#">Projects</a></li>
+          <li class="nav-btn" id="nav-contact"><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+
+    <div id="pages">
+<!-- PAGE 1: Greeting Page -->
+    <div class="page" id="page-greeting">
+      <div class="container-fluid flex-container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>Hi there!</h1>
+          </div>
+        </div>
       </div>
     </div>
+
+<!-- PAGE 2: Home Page -->
+    <div class="page" id="page-home">
+      <div class="container flex-container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1>My name's</h1>
+          </div>
+          <div class="col-md-12" id="name-banner">
+            <h1 id="name-text">JORDAN CAZAMIAS</em></h1>
+          </div>
+        </div>
+        <div class="row">
+          <h2>(but really, who am I?)</h2>
+        </div>
+      </div>
+    </div>
+
+<!-- PAGE 3: Coding Page -->
+    <div class="page" id="page-coding">
+      <div class="container-fluid flex-container">
+        <div class="row row-header">
+          <h1>I'm an AI Programmer</h1>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <img id="img-programmer" src="assets/assets_programmer.png">
+          </div>
+        </div>
+
+        <div class="peek-from-bottom">
+          <div class="row">
+            <p id="peek-prompt">See my coding skills</p>
+          </div>
+          <div class="row">
+            <img id="peek-item" src="assets/assets_coding-skills.png">
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- PAGE 4: Design Page -->
+    <div class="page" id="page-design">
+      <div class="container-fluid flex-container">
+        <div class="row row-header">
+          <h1>I'm a UI/UX Designer</h1>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <img id="img-designer" src="assets/assets_designer.png">
+          </div>
+        </div>
+        <div class="peek-from-bottom">
+          <div class="row">
+            <p id="peek-prompt">See my design skills</p>
+          </div>
+          <div class="row">
+            <img id="peek-item" src="assets/assets_design-skills.png">
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- PAGE 5: Projects Page -->
+    <div class="page" id="page-projects">
+      <div class="container-fluid flex-container">
+        <div class="row row-header">
+          <h1>Here's what I've worked on</h1>
+        </div>
+        <div class="row projects-container">
+          <div class="col-lg-4 col-md-6">
+            <img src="assets/assets_project-variant.png">
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <img src="assets/assets_project-research.png">
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <img src="assets/assets_project-template.png">
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <img src="assets/assets_project-template.png">
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <img src="assets/assets_project-template.png">
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <img src="assets/assets_project-template.png">
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <img src="assets/assets_project-template.png">
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <img src="assets/assets_project-template.png">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<!-- PAGE 6: Contact Page -->
+    <div class="page" id="page-contact">
+      <div class="container-fluid flex-container">
+        <div class="row row-header">
+          <h1>Let's get in touch!</h1>
+        </div>
+        <div class="row">
+          <img src="assets/assets_contact.png">
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -28,16 +159,20 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-    <!-- Custom scripts -->
-    <script>
-    window.setTimeout(
-      goToPage, 1500, "home-screen.html"
-    );
 
-    function goToPage(page)
-    {
-      window.location.href = page;
-    }
-    </script>
+    <!-- Custom scripts -->
+    <script src="pages.js"></script>
+    <script src="peek-from-bottom.js"></script>
+    <script src="projects.js"></script>
+    <!-- <script> -->
+    <!-- window.setTimeout( -->
+      <!-- goToPage, 1500, "home-screen.html" -->
+    <!-- ); -->
+
+    <!-- function goToPage(page) -->
+    <!-- { -->
+      <!-- window.location.href = page; -->
+    <!-- } -->
+    <!-- </script> -->
   </body>
 </html>

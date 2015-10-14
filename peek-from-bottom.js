@@ -1,14 +1,11 @@
-// Controls behavior for elements that peek from bottom of screen
+// peek-from-bottom.js: Controls behavior for elements that peek from bottom of screen
 
 var oldPromptText = $('#peek-prompt').text();
 var newPromptText = 'Return to Page';
 var oldPeekItemTop = $('#peek-item').css('margin-top');
 var oldPeekDivTop = $('.peek-from-bottom').css('margin-top');
 var newPeekTop = '0px';
-var showTop = '-60%';
-
-// Add element to dim screen as needed
-$('body').prepend('<div id="page-cover"></div>')
+var showTop = '-40%';
 
 // Move item slightly when the page is loaded
 $('#peek-item').css({marginTop: newPeekTop})
@@ -35,6 +32,8 @@ $('.peek-from-bottom').on('mouseenter',
 $('.peek-from-bottom').click(
                       function() {
                         if(!$(this).hasClass('peek-active')) {
+                          // Add element to dim screen as needed
+                          $('body').prepend('<div id="page-cover"></div>')
                           $('.peek-from-bottom').addClass('peek-active');
                           $('#page-cover').animate({opacity: 0.9}, 200);
                           $('#peek-prompt').text(newPromptText);
@@ -45,5 +44,6 @@ $('.peek-from-bottom').click(
                           $('.peek-from-bottom').animate({marginTop: oldPeekDivTop}, 200);
                           $('.peek-from-bottom').removeClass('peek-active');
                           $('#page-cover').animate({opacity: 0}, 200);
+                          $('#page-cover').remove();
                         }
                       });

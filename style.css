@@ -4,6 +4,11 @@ body
   overflow: hidden;
 }
 
+body .body-scroll
+{
+  overflow-y: auto;
+}
+
 h1
 {
   color: #fffffc;
@@ -32,17 +37,45 @@ a
 
 .flex-container
 {
+  min-width: 100vw;
+  min-height : 100vh;
   display: flex;
-  margin: auto;
-  min-height: 100vh;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: space-between;
   display: -webkit-flex; /* For Safari */
-  -webkit align-items: flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  align-items: center;
+  -webkit-align-items: center;
+  /*justify-content: space-between;*/
+  /*-webkit-justify-content: space-between;*/
+
+  margin: auto;
+  text-align: center;
 }
 
+/*Page settings*/
+
+#pages
+{
+  display: table;
+  position: fixed;
+  /*overflow: auto;*/
+  left: 0px;
+  top: 0px;
+
+  /*flex-direction: row;*/
+  /*flex-wrap: nowrap;*/
+  /*justify-content: flex-start;*/
+}
+
+.page
+{
+  display: table-cell;
+  margin: auto;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+/*Navbar settings*/
 .navbar-default
 {
   order: 0;
@@ -56,10 +89,7 @@ a
 .vcenter
 {
   order: 1;
-  flex:
-  margin: 0 auto;
-  padding-top: 5%;
-  padding-bottom: 5%;
+  margin: auto;
 }
 
 .hcenter
@@ -73,6 +103,8 @@ a
   order: 1;
   margin-top: auto;
   margin-bottom: auto;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
 }
 
 /*Row used for top header text on page*/
@@ -80,7 +112,8 @@ a
 {
   order: 1;
   background-color: #a83220;
-  margin-top: 4%;
+  margin-top: 5%;
+  padding: 0;
   align-self: stretch;
   text-align: center;
 }
@@ -91,6 +124,7 @@ a
   order: 1;
   padding-top: 5%;
   align-items: center;
+  -webkit-align-items: center;
   width: 80%;
   /*background-color: black;*/
 }
