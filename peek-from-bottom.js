@@ -1,30 +1,40 @@
 // peek-from-bottom.js: Controls behavior for elements that peek from bottom of screen
 
-var oldPromptText = $('#peek-prompt').text();
+var oldPromptText;
 var newPromptText = 'Return to Page';
-var oldPeekItemTop = $('#peek-item').css('margin-top');
+var oldPeekItemTop = $('.peek-item').css('margin-top');
 var oldPeekDivTop = $('.peek-from-bottom').css('margin-top');
-var newPeekTop = '0px';
-var showTop = '-40%';
+var newPeekTop = '-100px';
+var showTop = '-700px';
 
-// Move item slightly when the page is loaded
-$('#peek-item').css({marginTop: newPeekTop})
-               .delay(300)
-               .animate({marginTop: oldPeekItemTop}, 300);
+
+$('#nav-coding').click(function() {
+  // Move items slightly when the page is loaded
+  $('#coding-skills').find('.peek-item').css({marginTop: newPeekTop})
+                                        .delay(400)
+                                        .animate({marginTop: oldPeekItemTop}, 300);
+});
+
+$('#nav-design').click(function() {
+  // Move items slightly when the page is loaded
+  $('#design-skills').find('.peek-item').css({marginTop: newPeekTop})
+                                        .delay(400)
+                                        .animate({marginTop: oldPeekItemTop}, 300);
+});
 
 // Hover: prompt user to click
-$('.peek-from-bottom').on('mouseenter',
+$('.page').on('mouseenter',
                           function() {
-                            $('#peek-prompt').fadeTo(200, 1).clearQueue();
+                            $('.peek-prompt').fadeTo(200, 1).clearQueue();
                             if(!$(this).hasClass('peek-active')) {
-                              $('#peek-item').stop().animate({marginTop: newPeekTop}, 200);
+                              $('.peek-item').stop().animate({marginTop: newPeekTop}, 200);
                             }
                           })
                       .on('mouseleave',
                           function() {
-                              $('#peek-prompt').fadeTo(200, 0).clearQueue();
+                              $('.peek-prompt').fadeTo(200, 0).clearQueue();
                               if(!$(this).hasClass('peek-active')) {
-                                $('#peek-item').stop().animate({marginTop: oldPeekItemTop}, 200);
+                                $('.peek-item').stop().animate({marginTop: oldPeekItemTop}, 200);
                             }
                           });
 
@@ -36,11 +46,12 @@ $('.peek-from-bottom').click(
                           $('body').prepend('<div id="page-cover"></div>')
                           $('.peek-from-bottom').addClass('peek-active');
                           $('#page-cover').animate({opacity: 0.9}, 200);
-                          $('#peek-prompt').text(newPromptText);
+                          oldPromptText = $(this).find('.peek-prompt').text();
+                          $(this).find('.peek-prompt').text(newPromptText);
                           $('.peek-from-bottom').animate({marginTop: showTop}, 200);
                         }
                         else {
-                          $('#peek-prompt').text(oldPromptText).css({opacity: 0});
+                          $(this).find('.peek-prompt').text(oldPromptText).css({opacity: 0});
                           $('.peek-from-bottom').animate({marginTop: oldPeekDivTop}, 200);
                           $('.peek-from-bottom').removeClass('peek-active');
                           $('#page-cover').animate({opacity: 0}, 200);

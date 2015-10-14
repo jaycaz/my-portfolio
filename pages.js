@@ -32,7 +32,7 @@ function moveToPage(pageId)
   var dx = offset.left;
   var dy = offset.top;
 
-  $('#pages').animate({left : '-=' + dx, top : '-=' + dy});
+  $('#pages').animate({left : '-=' + dx, top : '-=' + dy}, 'fast');
 }
 
 // Dynamic resizing of pages

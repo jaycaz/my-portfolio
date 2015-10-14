@@ -180,12 +180,12 @@ a
   justify-content: flex-start;
 }
 
-#peek-prompt
+.peek-prompt
 {
   opacity: 0;
 }
 
-#peek-item
+.peek-item
 {
   margin-top: 0%;
   margin-left: auto;
