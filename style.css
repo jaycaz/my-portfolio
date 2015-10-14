@@ -57,8 +57,9 @@ a
 #pages
 {
   display: table;
-  position: fixed;
+  position: absolute;
   /*overflow: auto;*/
+  max-height: 100vh;
   left: 0px;
   top: 0px;
 
@@ -71,8 +72,8 @@ a
 {
   display: table-cell;
   margin: auto;
-  min-width: 100vw;
-  min-height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
 }
 
 /*Navbar settings*/
@@ -86,16 +87,11 @@ a
   font-size: 14pt;
 }
 
-.vcenter
+.centerpiece
 {
   order: 1;
-  margin: auto;
-}
-
-.hcenter
-{
-  align-self: center;
-  text-align: center;
+  /*margin: auto;*/
+  margin-top: -15vh;
 }
 
 .row
@@ -113,7 +109,8 @@ a
   order: 1;
   background-color: #a83220;
   margin-top: 5%;
-  padding: 0;
+  margin-bottom: 0%;
+  padding: 0%;
   align-self: stretch;
   text-align: center;
 }
@@ -164,10 +161,23 @@ a
   z-index: 98;
 }
 
+/*Div used for positioning*/
 .peek-from-bottom
 {
-  order: 99;
+  position: fixed;
+  top: 75vh;
+  /*left:*/
+  /*order: 99;*/
   z-index: 99;
+}
+
+/*Div used for layout of sub-items*/
+.flex-container-peek
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 #peek-prompt
@@ -177,5 +187,7 @@ a
 
 #peek-item
 {
-  margin-top: 8%;
+  margin-top: 0%;
+  margin-left: auto;
+  margin-right: auto;
 }
