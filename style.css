@@ -4,9 +4,9 @@ body
   overflow: hidden;
 }
 
-body .body-scroll
+body.body-scroll
 {
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 h1

@@ -23,38 +23,36 @@ $('#nav-design').click(function() {
 });
 
 // Hover: prompt user to click
-$('.page').on('mouseenter',
-                          function() {
-                            $('.peek-prompt').fadeTo(200, 1).clearQueue();
-                            if(!$(this).hasClass('peek-active')) {
-                              $('.peek-item').stop().animate({marginTop: newPeekTop}, 200);
-                            }
-                          })
-                      .on('mouseleave',
-                          function() {
-                              $('.peek-prompt').fadeTo(200, 0).clearQueue();
-                              if(!$(this).hasClass('peek-active')) {
-                                $('.peek-item').stop().animate({marginTop: oldPeekItemTop}, 200);
-                            }
-                          });
+$('.page').on('mouseenter', function() {
+            $('.peek-prompt').fadeTo(200, 1).clearQueue();
+            if(!$(this).hasClass('peek-active')) {
+              $('.peek-item').stop().animate({marginTop: newPeekTop}, 200);
+            }
+          })
+      .on('mouseleave',
+          function() {
+              $('.peek-prompt').fadeTo(200, 0).clearQueue();
+              if(!$(this).hasClass('peek-active')) {
+                $('.peek-item').stop().animate({marginTop: oldPeekItemTop}, 200);
+            }
+          });
 
 // Click: toggle showing peek item over rest of page
-$('.peek-from-bottom').click(
-                      function() {
-                        if(!$(this).hasClass('peek-active')) {
-                          // Add element to dim screen as needed
-                          $('body').prepend('<div id="page-cover"></div>')
-                          $('.peek-from-bottom').addClass('peek-active');
-                          $('#page-cover').animate({opacity: 0.9}, 200);
-                          oldPromptText = $(this).find('.peek-prompt').text();
-                          $(this).find('.peek-prompt').text(newPromptText);
-                          $('.peek-from-bottom').animate({marginTop: showTop}, 200);
-                        }
-                        else {
-                          $(this).find('.peek-prompt').text(oldPromptText).css({opacity: 0});
-                          $('.peek-from-bottom').animate({marginTop: oldPeekDivTop}, 200);
-                          $('.peek-from-bottom').removeClass('peek-active');
-                          $('#page-cover').animate({opacity: 0}, 200);
-                          $('#page-cover').remove();
-                        }
-                      });
+$('.peek-from-bottom').click( function() {
+        if(!$(this).hasClass('peek-active')) {
+          // Add element to dim screen as needed
+          $('body').prepend('<div id="page-cover"></div>')
+          $('.peek-from-bottom').addClass('peek-active');
+          $('#page-cover').animate({opacity: 0.9}, 200);
+          oldPromptText = $(this).find('.peek-prompt').text();
+          $(this).find('.peek-prompt').text(newPromptText);
+          $('.peek-from-bottom').animate({marginTop: showTop}, 200);
+        }
+        else {
+          $(this).find('.peek-prompt').text(oldPromptText).css({opacity: 0});
+          $('.peek-from-bottom').animate({marginTop: oldPeekDivTop}, 200);
+          $('.peek-from-bottom').removeClass('peek-active');
+          $('#page-cover').animate({opacity: 0}, 200);
+          $('#page-cover').remove();
+        }
+      });
