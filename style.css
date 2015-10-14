@@ -1,6 +1,7 @@
 body
 {
   background-color: #66c3c8;
+  overflow: hidden;
 }
 
 h1
@@ -17,6 +18,13 @@ h2
   font-family: 'Exo', sans-serif;
 }
 
+p
+{
+  color: #fffffc;
+  font-size: 24pt;
+  font-family: 'Exo', sans-serif;
+}
+
 a
 {
   font-family: 'Exo', sans-serif;
@@ -29,7 +37,8 @@ a
   min-height: 100vh;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  text-align: center;
+  justify-content: space-between;
   display: -webkit-flex; /* For Safari */
   -webkit align-items: flex;
 }
@@ -47,7 +56,8 @@ a
 .vcenter
 {
   order: 1;
-  margin: auto;
+  flex:
+  margin: 0 auto;
   padding-top: 5%;
   padding-bottom: 5%;
 }
@@ -56,27 +66,6 @@ a
 {
   align-self: center;
   text-align: center;
-}
-
-/*The banner image for the home screen*/
-#name-banner
-{
-  background-image: url("assets/assets_banner.png");
-  padding-bottom: 13%;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-#name-text
-{
-  padding-top: 1%;
-  font-weight: 700;
-}
-
-#img-designer
-{
-  width: 100%;
-  height: 100%;
 }
 
 .row
@@ -109,4 +98,50 @@ a
 .projects-container img
 {
   margin: 5%;
+}
+
+/*Banner image for the home screen*/
+#name-banner
+{
+  background-image: url("assets/assets_banner.png");
+  padding-bottom: 13%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/*Text for name on banner image*/
+#name-text
+{
+  padding-top: 1%;
+  font-weight: 700;
+}
+
+/*Selectors for coding and design page peeking*/
+
+#page-cover
+{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0;
+  z-index: 98;
+}
+
+.peek-from-bottom
+{
+  order: 99;
+  z-index: 99;
+}
+
+#peek-prompt
+{
+  opacity: 0;
+}
+
+#peek-item
+{
+  margin-top: 8%;
 }
